@@ -22,7 +22,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
                     },
                 });
                 console.log("ress:", res);
-                if (!res.statusCode) {
+                if (res.statusCode === 201) {
                     return {
                         _id: res.data?.user._id,
                         name: res.data?.user.name,
@@ -36,7 +36,6 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
                 } else {
                     throw new Error("Internal server error");
                 }
-                return user;
             },
         }),
     ],
