@@ -8,7 +8,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     providers: [
         Credentials({
             credentials: {
-                email: {},
+                username: {},
                 password: {},
             },
             authorize: async (credentials) => {
@@ -17,7 +17,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
                     method: "POST",
                     url: "http://localhost:8080/api/v1/auth/login",
                     body: {
-                        username: credentials.email,
+                        username: credentials.username,
                         password: credentials.password,
                     },
                 });
