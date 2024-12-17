@@ -6,6 +6,7 @@ import { authenticate } from "@/utils/actions";
 import { useRouter } from "next/navigation";
 import ModalReactive from "./modal.reactive";
 import { useState } from "react";
+import ModalChangePassword from "./modal.change.password";
 
 const Login = () => {
     const router = useRouter();
@@ -105,6 +106,7 @@ const Login = () => {
                 </Col>
             </Row>
             <ModalReactive isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} userEmail={userEmail} />
+            <ModalChangePassword isModalOpen={changePassword} setIsModalOpen={setChangePassword} />
         </>
     );
 };
